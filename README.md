@@ -1,4 +1,4 @@
-# CIS6800Project
+# Improving Depth Estimation by Smoothing consecutive feames using Naive CNN
 
 We provide all of the code needed to train our models, as well as pretrained model files for which you can run validation.
 
