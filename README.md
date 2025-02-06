@@ -44,14 +44,37 @@ val_checkpoint_ratios: set this to a list of proportions through the training at
 ## Aside
 These are some additional notebooks that we have included for reference. The iterations 0 and 1 were not directly related to this research but the idea of using an ML experiment (CNN or Transformer based approach) has its roots of improving the alignment of the maps by explicitly aligning them. The iteration 0 and iteration 1 have been defined below: -
 
-NCUT_Visualizations.ipynb - used to generate our NCUT visualizations
+      NCUT_Visualizations.ipynb - used to generate our NCUT visualizations
 
 ### Iteraion 0
 
+![image](https://github.com/user-attachments/assets/1142c5d0-ee59-4ce8-8c5c-d77638de2aac)
 
-Iterations0-1.ipynb - implemented and evaluated Iterations 0 and 1
+![image](https://github.com/user-attachments/assets/288e9cbb-6ef2-444a-af84-37aea109fd02)
 
-CIS6800ProjectDemo.ipynb - demo for visualizing the output depth maps produced by Iterations 2-4
+### Iteraion 1
+
+### Phase correlation
+##### Signal processing technique for estimating displacement between two image signals by analyzing the difference in their phase in the frequency domain
+##### Pipeline
+  1. Transforming the two images into the frequency domain - patial shifts between images appear as differences in phase between their Fourier coefficients
+  2. Computing the cross-power spectrum of the two Fourier Transforms
+  3. Converting back to the spatial domain via the Inverse Fourier Transform
+  4. Produces an image in the spatial domain, which will contain a sharp peak in the signal
+  5. Pixel location of this peak is indicative of the shift between the two images
+
+![image](https://github.com/user-attachments/assets/6a131961-30d2-4a9b-a421-78f1fb4eaa5e)
+
+We considered alternative methods for aligning the depth maps
+1. Discovery: Phase correlation can provide very fast results (~3 ms additional computation) while providing similar reduction in MSE as feature correspondence approaches from Iteration 0
+2. Aligning features using phase correlation is still unreliable, so we still perform weighted average: weight current depth map by 𝜌=0.83 and previous depth map by (1-𝜌)
+
+![image](https://github.com/user-attachments/assets/2c89f17b-28d0-4ce2-a408-6ff005aa99c7)
+
+
+#### Iterations0-1.ipynb - implemented and evaluated Iterations 0 and 1
+
+    CIS6800ProjectDemo.ipynb - demo for visualizing the output depth maps produced by Iterations 2-4
 
 Each notebook contains instructions on how to run it.
 
