@@ -42,15 +42,8 @@ segment_to_load: we implemented the ability to save copies of each model partway
 val_checkpoint_ratios: set this to a list of proportions through the training at which you want to save your models and run validation, we set this to [0.25, 0.5, 0.75] in most of our experiments (no need to include 1, as validation and model saving occur automatically at the end of each epoch)
 
 ## Aside
-These are some additional notebooks that we have included for reference. The iterations 0 and 1 were not directly related to this research but the idea of using an ML experiment (CNN or Transformer based approach) has its roots of improving the alignment of the maps by explicitly aligning them. The iteration 0 and iteration 1 have been defined below: -
-
+These are some additional notebooks that we have included for reference. 
       NCUT_Visualizations.ipynb - used to generate our NCUT visualizations
-
-### Iteraion 0
-
-![image](https://github.com/user-attachments/assets/1142c5d0-ee59-4ce8-8c5c-d77638de2aac)
-
-![image](https://github.com/user-attachments/assets/288e9cbb-6ef2-444a-af84-37aea109fd02)
 
 ### Iteraion 1
 
